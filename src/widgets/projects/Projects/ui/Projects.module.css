@@ -1,0 +1,172 @@
+.projects {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.label {
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-family-main);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.comparisonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.imageCard {
+  flex: 1;
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.imageCard img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.imageCard:hover img {
+  filter: grayscale(0%);
+}
+
+.afterCard {
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.15);
+}
+
+.afterCard img {
+  filter: grayscale(0%);
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.afterBadge {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.desc {
+  padding: 24px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.desc h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.desc p {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.vsLine {
+  width: 2px;
+  height: 40px;
+  background: var(--color-border);
+}
+
+.vsCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .comparisonWrapper {
+    flex-direction: column;
+  }
+
+  .vs {
+    flex-direction: row;
+  }
+
+  .vsLine {
+    width: 40px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .imageCard img {
+    height: 250px;
+  }
+}

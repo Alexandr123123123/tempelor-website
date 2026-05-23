@@ -1,0 +1,139 @@
+.process {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--color-bg);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 80px;
+}
+
+.label {
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-family-main);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.stepsWrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 24px;
+}
+
+.stepCard {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stepIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.stepCard:hover .stepIcon {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.stepCard:hover .stepNum {
+  color: #fff;
+}
+
+.stepNum {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+}
+
+.stepTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.stepDesc {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.connector {
+  position: absolute;
+  top: 32px;
+  left: 64px;
+  width: calc(100% - 64px + 24px);
+  height: 2px;
+  background-color: var(--color-border);
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .stepsWrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .stepCard {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  
+  .stepIcon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+}
