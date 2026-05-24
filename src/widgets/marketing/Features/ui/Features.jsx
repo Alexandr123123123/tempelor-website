@@ -61,43 +61,25 @@ const Features = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
         >
-          <div className={styles.headerGlass}>
-            <span className={styles.label}>
-              <span className={styles.accentSlash}>//</span> Why Choose Us
-            </span>
-            <h2 className={styles.title}>The Tempelor Advantage</h2>
-            <p className={styles.subtitle}>
-              We don't just run wires; we build the invisible foundation of your home. 
-              Discover the core principles that make us the leading choice for premium residential electrical deployment.
-            </p>
-          </div>
+          <span className={styles.label}>
+            <span className={styles.accentSlash}>//</span> Why Choose Us
+          </span>
+          <h2 className={styles.title}>The Tempelor Advantage</h2>
+          <p className={styles.subtitle}>
+            We don't just run wires; we build the invisible foundation of your home. 
+            Discover the core principles that make us the leading choice for premium residential electrical deployment.
+          </p>
         </motion.div>
 
-        <motion.div 
-          className={styles.grid}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.15
-              }
-            }
-          }}
-        >
+        <div className={styles.grid}>
           {features.map((feat) => (
             <motion.div 
               key={feat.id} 
               className={styles.card}
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
-              }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
             >
               <div className={styles.iconWrapper}>
                 {feat.icon}
@@ -108,79 +90,32 @@ const Features = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-      </div>
+        </div>
 
-      {/* BOTTOM ADVANTAGE BANNER */}
-      <motion.div 
-        className={styles.banner}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-      >
-        <div className={styles.bannerLeft}>
-          <div className={styles.bannerIcon}>
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" strokeLinecap="round" strokeLinejoin="round" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-          </div>
+        {/* BOTTOM ADVANTAGE BANNER (Simplified) */}
+        <motion.div 
+          className={styles.banner}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+        >
           <div className={styles.bannerInfo}>
             <h4 className={styles.bannerTitle}>Tempelor Solutions</h4>
             <p className={styles.bannerSubtitle}>Smart energy for your home</p>
           </div>
-        </div>
 
-        <div className={styles.bannerMiddle}>
-          <div className={styles.bannerItem}>
-            <div className={styles.bannerItemIcon}>
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
+          <div className={styles.bannerMiddle}>
             <span className={styles.bannerItemLabel}>Free consultation</span>
-          </div>
-
-          <div className={styles.bannerItem}>
-            <div className={styles.bannerItemIcon}>
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
             <span className={styles.bannerItemLabel}>Site visit & estimate</span>
-          </div>
-
-          <div className={styles.bannerItem}>
-            <div className={styles.bannerItemIcon}>
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
             <span className={styles.bannerItemLabel}>Installation & support</span>
-          </div>
-
-          <div className={styles.bannerItem}>
-            <div className={styles.bannerItemIcon}>
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 18v-6a9 9 0 0 1 18 0v6" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
             <span className={styles.bannerItemLabel}>Support</span>
           </div>
-        </div>
 
-        <div className={styles.bannerRight}>
-          <motion.button 
-            className={styles.bannerBtn}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Leave a request (→)
-          </motion.button>
-        </div>
-      </motion.div>
+          <button className={styles.bannerBtn}>
+            Leave a request →
+          </button>
+        </motion.div>
+      </div>
     </section>
   );
 };

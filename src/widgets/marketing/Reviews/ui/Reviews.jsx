@@ -48,7 +48,9 @@ const Reviews = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={itemVariants}
         >
-          <span className={styles.label}>Testimonials</span>
+          <div className={styles.label}>
+            <span className={styles.accentSlash}>//</span> Testimonials
+          </div>
           <h2 className={styles.title}>What Our Clients Say</h2>
         </motion.div>
 

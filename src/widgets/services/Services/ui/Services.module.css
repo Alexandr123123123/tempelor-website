@@ -142,6 +142,24 @@
   transform: translateY(-4px);
 }
 
+.imageCard {
+  padding: 0 !important;
+  overflow: hidden;
+  display: block;
+  border: 1px solid rgba(0, 195, 255, 0.3) !important;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
 .iconWrapper {
   width: 68px;
   height: 68px;
@@ -220,9 +238,13 @@
     gap: 28px;
   }
   .bannerMiddle {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 24px;
+    gap: 12px;
+    width: 100%;
+  }
+  .bannerItemsWrapper {
+    gap: 16px;
   }
 }
 
@@ -290,10 +312,48 @@
 
 .bannerMiddle {
   display: flex;
-  align-items: flex-start;
-  gap: 32px;
+  align-items: center;
+  gap: 16px;
   flex-grow: 1;
   justify-content: center;
+}
+
+.bannerItemsWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  justify-content: center;
+  flex-grow: 1;
+  min-height: 50px;
+}
+
+.bannerArrow {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0, 195, 255, 0.4);
+  color: #00c3ff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.bannerArrow:hover:not(:disabled) {
+  background: rgba(0, 195, 255, 0.2);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.bannerArrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .bannerItem {

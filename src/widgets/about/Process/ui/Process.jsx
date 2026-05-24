@@ -3,25 +3,6 @@ import { motion } from 'framer-motion';
 import styles from './Process.module.css';
 
 const Process = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
-
   const steps = [
     {
       step: "01",
@@ -48,41 +29,55 @@ const Process = () => {
   return (
     <section className={styles.process} id="process">
       <div className={styles.container}>
-        <motion.div 
+
+        {/* Header */}
+        <motion.div
           className={styles.header}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          variants={itemVariants}
+          transition={{ duration: 0.6 }}
         >
-          <span className={styles.label}>How We Work</span>
+          <span className={styles.label}>
+            <span className={styles.accentSlash}>//</span> How We Work
+          </span>
           <h2 className={styles.title}>Our Proven Process</h2>
           <p className={styles.subtitle}>
-            From the initial handshake to flipping the switch, our transparent workflow 
+            From the initial handshake to flipping the switch, our transparent workflow
             ensures peace of mind at every stage.
           </p>
         </motion.div>
 
-        <motion.div 
-          className={styles.stepsWrapper}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
+        {/* One unified card wrapped in neon border */}
+        <motion.div
+          className={styles.cardWrapper}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
+          <div className={styles.card}>
           {steps.map((item, index) => (
-            <motion.div key={index} className={styles.stepCard} variants={itemVariants}>
-              <div className={styles.stepIcon}>
+            <div key={index} className={styles.stepItem}>
+              {/* Vertical divider between steps */}
+              {index !== 0 && <div className={styles.divider} />}
+
+              <motion.div
+                className={styles.stepInner}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+              >
                 <div className={styles.stepNum}>{item.step}</div>
-              </div>
-              <h3 className={styles.stepTitle}>{item.title}</h3>
-              <p className={styles.stepDesc}>{item.desc}</p>
-              {index !== steps.length - 1 && (
-                <div className={styles.connector}></div>
-              )}
-            </motion.div>
+                <h3 className={styles.stepTitle}>{item.title}</h3>
+                <p className={styles.stepDesc}>{item.desc}</p>
+              </motion.div>
+            </div>
           ))}
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

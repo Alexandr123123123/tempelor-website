@@ -1,5 +1,7 @@
 import { Hero } from '../../../widgets/marketing/Hero';
 import { About } from '../../../widgets/about/About';
+import { About1 } from '../../../widgets/about/About1';
+import { AboutFinal } from '../../../widgets/about/AboutFinal';
 import { Services } from '../../../widgets/services/Services';
 import { Features } from '../../../widgets/marketing/Features';
 import { Process } from '../../../widgets/about/Process';
@@ -9,16 +11,17 @@ import { Contact } from '../../../widgets/contact/Contact';
 
 export const HomePage = () => {
   return (
-    <div>
+    <main>
       <Hero />
-      <About />
+      {/* <About /> */}
+      <About1 />
+      <AboutFinal />
       <Services />
       <Features />
       <Process />
       <Projects />
       <Reviews />
       <Contact />
-    </div>
+    </main>
   );
 };
-

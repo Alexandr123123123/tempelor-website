@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import heroImg from '../../../../assets/hero.png';
 import { Button } from '../../../../shared/ui/Button';
 import styles from './Hero.module.css';
@@ -35,8 +36,26 @@ const Hero = () => {
   })), []);
 
   return (
-    <section className={styles.hero} id="hero">
-      <div className={styles.bg}>
+    <>
+      <nav className={styles.nav}>
+        <div className={styles.navContainer}>
+          <Link to="/" className={styles.logo} style={{textDecoration: 'none'}}>
+            <div className={styles.logoIcon}>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            Tempelor
+          </Link>
+          <div className={styles.navLinks}>
+            <Link to="/#about1" className={styles.navLink}>About</Link>
+            <Link to="/services" className={styles.navLink}>Services</Link>
+            <Link to="/#contact" className={styles.navLink}>Contact</Link>
+          </div>
+        </div>
+      </nav>
+      <section className={styles.hero} id="hero">
+        <div className={styles.bg}>
         <img src={heroImg} alt="Premium electrical panel installation" />
         <div className={styles.overlay}></div>
         <div className={styles.particlesContainer}>
@@ -89,7 +108,8 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

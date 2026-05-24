@@ -1,156 +1,330 @@
 .contact {
-  padding: var(--spacing-xxl) 0;
-  background-color: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  padding: 100px 0;
+  background-color: #0f1115;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Background effects */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: rgba(0, 195, 255, 0.05);
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: rgba(0, 195, 255, 0.05);
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto 60px;
 }
 
 .label {
-  display: block;
-  color: var(--color-primary);
-  font-size: 0.9rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  color: #00c3ff;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  background: rgba(0, 195, 255, 0.1);
+  border: 1px solid rgba(0, 195, 255, 0.3);
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(0, 195, 255, 0.15);
+}
+
+.accentSlash {
+  color: #ffffff;
+  margin-right: 8px;
+  opacity: 0.8;
+  font-weight: 900;
 }
 
 .title {
   font-family: var(--font-family-main);
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 24px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 30px rgba(0, 195, 255, 0.3);
 }
 
 .subtitle {
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
-  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.formWrapper {
-  background: var(--color-bg);
+/* FORM CARD */
+.formCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   padding: 40px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  border: 1px solid rgba(0, 195, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 195, 255, 0.1), inset 0 0 20px rgba(0, 195, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 .inputGroup {
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .inputGroup label {
-  display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
 }
 
 .inputGroup input,
 .inputGroup textarea {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  color: var(--color-text);
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  color: #ffffff;
   font-family: inherit;
   font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .inputGroup input:focus,
 .inputGroup textarea:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+  background: rgba(0, 195, 255, 0.05);
+  border-color: #00c3ff;
+  box-shadow: 0 0 15px rgba(0, 195, 255, 0.25);
 }
 
 .submitBtn {
-  width: 100%;
+  margin-top: 10px;
+  padding: 18px 32px;
+  background: #00c3ff;
+  color: #0f1115;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 195, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 195, 255, 0.6);
+  background: #33d1ff;
 }
 
 .infoWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.contactDetails {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.detailItem h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 8px;
+.bentoCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.detailItem p {
-  color: var(--color-text-muted);
-  line-height: 1.5;
+.bentoCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 195, 255, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 195, 255, 0.1);
 }
 
-.mapPlaceholder {
-  flex: 1;
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(0, 195, 255, 0.1);
+  border: 1px solid rgba(0, 195, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
-  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
-  background-size: 20px 20px;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  color: #00c3ff;
+}
+
+.iconWrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.bentoCard:hover .iconWrapper {
+  background: rgba(0, 195, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 195, 255, 0.4);
+}
+
+.bentoContent h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bentoContent p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* MAP CARD */
+.mapCard {
+  flex-grow: 1;
+  min-height: 250px;
+  padding: 0;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  background: radial-gradient(circle at center, rgba(0, 195, 255, 0.1) 0%, rgba(15, 17, 21, 0) 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mapPlaceholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 195, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 195, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
 }
 
 .mapText {
-  color: var(--color-text-muted);
-  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  color: rgba(0, 195, 255, 0.8);
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .mapPlaceholder {
-    min-height: 400px;
-  }
+  background: rgba(15, 17, 21, 0.8);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 195, 255, 0.3);
 }
 
 @media (max-width: 600px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .infoWrapper {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
   .title {
     font-size: 2.2rem;
   }
-  
-  .contactDetails {
-    grid-template-columns: 1fr;
+  .contact {
+    padding: 60px 0;
   }
 }

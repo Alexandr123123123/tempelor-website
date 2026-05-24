@@ -1,76 +1,62 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import styles from './About.module.css';
 
+import panelAfter from '../../../../assets/panel_after.png';
+import heroImg from '../../../../assets/hero.png';
+
 const About = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: "easeOut" }
-    }
-  };
-
-  const stats = [
-    {
-      title: "10+ Years",
-      desc: "Of premium industry experience delivering high-end residential solutions."
-    },
-    {
-      title: "500+ Projects",
-      desc: "Successfully completed smart homes and electrical installations."
-    },
-    {
-      title: "100% Certified",
-      desc: "Fully licensed, insured, and compliant with state and federal codes."
-    }
-  ];
-
   return (
     <section className={styles.about} id="about">
       <div className={styles.container}>
-        <motion.div 
-          className={styles.header}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={itemVariants}
-        >
-          <span className={styles.label}>About Us</span>
-          <h2 className={styles.title}>Expertise You Can Trust</h2>
-          <p className={styles.subtitle}>
-            We specialize in advanced electrical systems, smart home integrations, 
-            and architectural lighting for modern luxury homes. Our mission is to 
-            provide safe, efficient, and aesthetic energy solutions.
-          </p>
-        </motion.div>
+        <div className={styles.header}>
+          <span className={styles.label}>About Tempelor</span>
+          <h2 className={styles.title}>Precision. Safety. Innovation.</h2>
+        </div>
 
-        <motion.div 
-          className={styles.grid}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          {stats.map((stat, index) => (
-            <motion.div key={index} className={styles.card} variants={itemVariants}>
-              <h3 className={styles.statTitle}>{stat.title}</h3>
-              <p className={styles.statDesc}>{stat.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className={styles.bentoGrid}>
+          {/* Card 1: Large Text (2x2) */}
+          <div className={`${styles.card} ${styles.textCard} ${styles.span2x2}`}>
+            <h3 className={styles.cardTitle}>Who We Are</h3>
+            <p className={styles.cardDesc}>
+              Tempelor is a premier electrical contractor dedicated to redefining residential power systems. 
+              With a deep understanding of both traditional engineering and cutting-edge smart home technology, 
+              we bridge the gap between robust infrastructure and modern convenience. <br/><br/>
+              Every wire we run, every panel we install is a testament to our commitment to absolute 
+              perfection and uncompromising safety standards.
+            </p>
+          </div>
+
+          {/* Card 2: Image (1x2) */}
+          <div className={`${styles.card} ${styles.imageCard} ${styles.span1x2}`}>
+            <img src={panelAfter} alt="Modern Electrical Panel" />
+          </div>
+
+          {/* Card 3: Small Stat (1x1) */}
+          <div className={`${styles.card} ${styles.textCard} ${styles.span1x1}`}>
+            <div className={styles.statValue}>15+</div>
+            <div className={styles.statLabel}>Years Experience</div>
+          </div>
+
+          {/* Card 4: Small Stat (1x1) */}
+          <div className={`${styles.card} ${styles.textCard} ${styles.span1x1}`}>
+            <div className={styles.statValue}>500+</div>
+            <div className={styles.statLabel}>Projects Completed</div>
+          </div>
+
+          {/* Card 5: Image Wide (2x1) */}
+          <div className={`${styles.card} ${styles.imageCard} ${styles.span2x1}`}>
+            <img src={heroImg} alt="Smart Home Integration" />
+          </div>
+
+          {/* Card 6: Wide Text (2x1) */}
+          <div className={`${styles.card} ${styles.textCard} ${styles.span2x1}`}>
+            <h3 className={styles.cardTitle} style={{ marginBottom: '8px' }}>100% Certified & Insured</h3>
+            <p className={styles.cardDesc}>
+              Fully licensed professionals compliant with all state and federal electrical codes. 
+              Your peace of mind is our highest priority.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
