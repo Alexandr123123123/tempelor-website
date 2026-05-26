@@ -102,7 +102,7 @@
   color: #ffffff;
   margin-bottom: 20px;
   line-height: 1.2;
-  text-shadow: 0 0 40px rgba(0, 195, 255, 0.4), 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 0 40px rgba(0, 195, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
@@ -227,7 +227,7 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .title {
     font-size: 2.2rem;
   }
@@ -237,12 +237,14 @@
     padding: 28px 24px;
     gap: 28px;
   }
+
   .bannerMiddle {
     flex-wrap: nowrap;
     justify-content: center;
     gap: 12px;
     width: 100%;
   }
+
   .bannerItemsWrapper {
     gap: 16px;
   }
@@ -328,7 +330,7 @@
 }
 
 .bannerArrow {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(0, 195, 255, 0.4);
   color: #00c3ff;
   border-radius: 50%;

@@ -1,16 +1,38 @@
 .about {
   padding: 100px 0;
-  background-color: #f8faff;
+  background-color: #e8f0ff;
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-.container {
+.unifiedContainer {
+  position: relative;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: 900px;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: visible;
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--rot, 0deg));
+  transition: transform 0.3s ease, z-index 0s;
+}
+
+.card:hover {
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--rot, 0deg)) scale(1.05);
+  z-index: 10 !important;
 }
 
 .label {
@@ -37,7 +59,7 @@
 
 .title {
   font-family: var(--font-family-main);
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   color: #0f1115;
   margin: 0 0 24px 0;
@@ -45,96 +67,82 @@
   letter-spacing: -0.02em;
 }
 
-.chaoticContainer {
-  position: relative;
-  width: 100%;
-  height: 680px;
-}
-
-.card {
-  position: absolute;
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  transition: transform 0.3s ease, z-index 0s;
-}
-
-.card:hover {
-  transform: scale(1.05) var(--hover-transform) !important;
-  z-index: 10 !important;
-}
-
-/* Chaotic Positions & Sizes (spanning full width) */
 .headerCard {
-  width: 100%;
   max-width: 700px;
   height: auto;
-  position: relative;
-  top: auto;
-  left: auto;
-  z-index: 5;
-  margin-bottom: 40px;
   align-items: flex-start;
   text-align: left;
+  background-color: rgba(0, 195, 255, 0.08);
+  box-shadow: inset 0 0 50px rgba(0, 195, 255, 0.3);
+  border: 1px solid rgba(0, 195, 255, 0.2);
 }
 
-/* Initial base positions for existing cards */
 .card1 {
-  top: 35%;
-  left: 20%;
+  width: 260px;
+  height: 220px;
+  background-color: rgba(255, 0, 128, 0.08);
+  box-shadow: inset 0 0 50px rgba(255, 0, 128, 0.3);
+  border: 1px solid rgba(255, 0, 128, 0.2);
 }
 
 .card2 {
-  top: 10%;
-  left: 45%;
+  width: 460px;
+  height: 520px;
 }
 
 .card3 {
-  bottom: 15%;
-  left: 35%;
+  width: 190px;
+  height: 180px;
+  background-color: rgba(0, 255, 128, 0.08);
+  box-shadow: inset 0 0 50px rgba(0, 255, 128, 0.3);
+  border: 1px solid rgba(0, 255, 128, 0.2);
 }
 
 .card4 {
-  top: 5%;
-  right: 5%;
+  width: 220px;
+  height: 200px;
+  background-color: rgba(138, 43, 226, 0.08);
+  box-shadow: inset 0 0 50px rgba(138, 43, 226, 0.3);
+  border: 1px solid rgba(138, 43, 226, 0.2);
 }
 
 .card5 {
-  bottom: 10%;
-  right: 15%;
+  width: 240px;
+  height: 220px;
 }
 
 .card6 {
-  bottom: 5%;
-  left: 5%;
+  width: 280px;
+  height: 200px;
+  background-color: rgba(0, 195, 255, 0.2);
+  box-shadow: inset 0 0 50px rgba(0, 195, 255, 0.4);
+  border: 1px solid rgba(0, 195, 255, 0.3);
 }
 
 .extraCard {
-  top: 50%;
-  left: 50%;
+  width: 200px;
+  height: 200px;
 }
 
-/* Card Content Styles */
 .textCard {
   padding: 24px;
 }
 
 .imageCard {
   padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .imageCard img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 24px;
   display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .cardTitle {
@@ -142,13 +150,14 @@
   font-size: 1.4rem;
   font-weight: 700;
   color: #0f1115;
-  margin-bottom: 12px;
+  margin: 0 0 12px 0;
 }
 
 .cardDesc {
   color: #4a5568;
   line-height: 1.4;
   font-size: 0.9rem;
+  margin: 0;
 }
 
 .statValue {
@@ -165,27 +174,38 @@
   color: #0f1115;
 }
 
-@media (max-width: 900px) {
-  .chaoticContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: auto;
-    gap: 20px;
-  }
-
-  .card {
-    position: relative;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    max-width: 350px;
-  }
-
+@media (max-width: 1200px) {
   .title {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+}
+
+@media (max-width: 1000px) {
+  .unifiedContainer {
+    height: 1100px;
+  }
+}
+
+@media (max-width: 800px) {
+  .unifiedContainer {
+    height: 1120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .unifiedContainer {
+    height: 1200px;
+  }
+}
+
+@media (max-width: 450px) {
+  .unifiedContainer {
+    height: 1350px;
+  }
+}
+
+@media (max-width: 360px) {
+  .unifiedContainer {
+    height: 1500px;
   }
 }

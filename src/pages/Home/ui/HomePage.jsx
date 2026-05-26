@@ -1,6 +1,6 @@
 import { Hero } from '../../../widgets/marketing/Hero';
 import { About } from '../../../widgets/about/About';
-import { About1 } from '../../../widgets/about/About1';
+
 import { AboutFinal } from '../../../widgets/about/AboutFinal';
 import { Services } from '../../../widgets/services/Services';
 import { Features } from '../../../widgets/marketing/Features';
@@ -14,7 +14,7 @@ export const HomePage = () => {
     <main>
       <Hero />
       {/* <About /> */}
-      <About1 />
+
       <AboutFinal />
       <Services />
       <Features />

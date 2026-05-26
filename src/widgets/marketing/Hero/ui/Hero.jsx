@@ -35,6 +35,8 @@ const Hero = () => {
     size: `${Math.random() * 3 + 2}px`,
   })), []);
 
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   return (
     <>
       <nav className={styles.nav}>
@@ -47,10 +49,18 @@ const Hero = () => {
             </div>
             Tempelor
           </Link>
-          <div className={styles.navLinks}>
-            <Link to="/#about1" className={styles.navLink}>About</Link>
-            <Link to="/services" className={styles.navLink}>Services</Link>
-            <Link to="/#contact" className={styles.navLink}>Contact</Link>
+          <button 
+            className={`${styles.burgerBtn} ${isMenuOpen ? styles.open : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
+            <Link to="/#about1" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link to="/services" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Services</Link>
+            <Link to="/#contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </div>
         </div>
       </nav>
@@ -85,7 +95,7 @@ const Hero = () => {
           {/* Glowing background blobs removed for now */}
 
           <motion.span className={styles.label} variants={itemVariants}>
-            <span className={styles.accentSlash}>//</span> Premium Electrical Deployment
+            <span className={styles.accentSlash}>//</span> Electrical Development
           </motion.span>
           <motion.div className={styles.glassPanel} variants={itemVariants}>
             <motion.h1 className={styles.title} variants={itemVariants}>
@@ -93,7 +103,7 @@ const Hero = () => {
             </motion.h1>
             <motion.p className={styles.desc} variants={itemVariants}>
               Turnkey design and installation of modern power supply systems. 
-              Compliance with all safety standards, with a 5+ years warranty on all work.
+              Compliance with all safety standards, ensuring reliable performance for years to come.
             </motion.p>
           </motion.div>
 
@@ -102,7 +112,7 @@ const Hero = () => {
               href="#contact" 
               className={styles.glassBtnPrimary}
             >
-              Get a Quote
+              Book a Consultation
             </Button>
             <Button href="#services" className={styles.glassBtnSecondary}>Our Services</Button>
           </motion.div>
