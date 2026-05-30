@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useBookingModal } from '../../../../app/providers/BookingModalProvider';
 import styles from './Features.module.css';
 
 const Features = () => {
+  const { openModal } = useBookingModal();
+
   const features = [
     {
       id: 1,
@@ -17,12 +20,13 @@ const Features = () => {
     },
     {
       id: 2,
-      title: 'Extended Warranty',
-      desc: 'We offer a minimum 5-year warranty on all structural electrical work and materials used.',
+      title: 'Strict Quality Control',
+      desc: 'Every connection is verified, panels are assembled to strict standards, and all lines undergo mandatory load testing.',
       icon: (
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="3" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <path d="M9 11l1.5 1.5L14 9"/>
         </svg>
       )
     },
@@ -106,13 +110,14 @@ const Features = () => {
 
           <div className={styles.bannerMiddle}>
             <span className={styles.bannerItemLabel}>Free consultation</span>
-            <span className={styles.bannerItemLabel}>Site visit & estimate</span>
-            <span className={styles.bannerItemLabel}>Installation & support</span>
+            <span className={styles.bannerItemLabel}>Safety</span>
+            <span className={styles.bannerItemLabel}>Installation</span>
             <span className={styles.bannerItemLabel}>Support</span>
           </div>
 
-          <button className={styles.bannerBtn}>
-            Leave a request →
+          <button className={styles.bannerBtn} onClick={openModal}>
+            <span className={styles.btnLine1}>Book a</span>
+            <span className={styles.btnLine2}>consultation →</span>
           </button>
         </motion.div>
       </div>

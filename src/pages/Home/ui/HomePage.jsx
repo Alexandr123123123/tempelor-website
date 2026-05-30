@@ -8,6 +8,7 @@ import { Process } from '../../../widgets/about/Process';
 import { Projects } from '../../../widgets/projects/Projects';
 import { Reviews } from '../../../widgets/marketing/Reviews';
 import { Contact } from '../../../widgets/contact/Contact';
+import { Footer } from '../../../widgets/footer/Footer';
 
 export const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ export const HomePage = () => {
       <Projects />
       <Reviews />
       <Contact />
+      <Footer />
     </main>
   );
 };

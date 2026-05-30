@@ -1,0 +1,213 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 22, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(0, 195, 255, 0.3) 0%, transparent 60%),
+    radial-gradient(circle at 80% 100%, rgba(153, 51, 255, 0.3) 0%, transparent 60%),
+    rgba(15, 17, 21, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 195, 255, 0.5);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 195, 255, 0.2), inset 0 0 15px rgba(0, 195, 255, 0.1), 0 30px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-family-main);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(0, 195, 255, 0.5);
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.inputGroup:focus-within {
+  border-color: #00c3ff;
+  background: rgba(0, 195, 255, 0.05);
+  box-shadow: 0 0 0 4px rgba(0, 195, 255, 0.15), 0 0 20px rgba(0, 195, 255, 0.2);
+}
+
+.inputOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 18px 24px;
+  font-size: 1.1rem;
+  font-family: inherit;
+  pointer-events: none;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.hiddenText {
+  color: transparent;
+}
+
+.visiblePlaceholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.input {
+  width: 100%;
+  padding: 18px 24px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  outline: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.submit {
+  padding: 18px;
+  background: rgba(0, 195, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 195, 255, 0.5);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  box-shadow: 0 0 20px rgba(0, 195, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit:hover {
+  background: rgba(0, 195, 255, 0.4);
+  box-shadow: 0 0 30px rgba(0, 195, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.success {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  background: rgba(0, 255, 150, 0.1);
+  border: 1px solid rgba(0, 255, 150, 0.3);
+  color: #00ff96;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  font-size: 2.2rem;
+  box-shadow: 0 0 30px rgba(0, 255, 150, 0.2);
+}
+
+.success h3 {
+  font-family: var(--font-family-main);
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(0, 255, 150, 0.4);
+}
+
+.success p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 40px 24px;
+    border-radius: 20px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+}

@@ -75,7 +75,7 @@
 
 .title {
   font-family: var(--font-family-main);
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   color: #ffffff;
   margin: 0 0 20px 0;
@@ -86,7 +86,7 @@
 
 .subtitle {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   line-height: 1.6;
 }
 
@@ -207,6 +207,8 @@
   align-items: center;
   gap: 20px;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
 }
 
 .bentoCard:hover {
@@ -238,6 +240,25 @@
 .bentoCard:hover .iconWrapper {
   background: rgba(0, 195, 255, 0.2);
   box-shadow: 0 0 15px rgba(0, 195, 255, 0.4);
+}
+
+.copyIcon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bentoCard:hover .copyIcon {
+  color: #00c3ff;
+}
+
+.copyIcon.copied {
+  color: #00ff88;
 }
 
 .bentoContent h4 {
@@ -315,16 +336,44 @@
   .infoWrapper {
     grid-template-columns: 1fr;
   }
-  .title {
-    font-size: 2.8rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 2.2rem;
-  }
   .contact {
     padding: 60px 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+}
+
+@media (max-width: 500px) {
+  .bentoContent h4 {
+    font-size: clamp(0.75rem, 3.5vw, 0.95rem);
+  }
+  .bentoContent p {
+    font-size: clamp(0.85rem, 4.2vw, 1.1rem);
+  }
+  
+  .formCard {
+    padding: clamp(20px, 6vw, 40px);
+  }
+  
+  .inputGroup label {
+    font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+  }
+  
+  .inputGroup input,
+  .inputGroup textarea {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    padding: clamp(12px, 3.5vw, 16px);
+  }
+  
+  .submitBtn {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    padding: clamp(14px, 4vw, 18px) clamp(24px, 6vw, 32px);
   }
 }

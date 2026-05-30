@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import heroImg from '../../../../assets/hero.png';
 import { Button } from '../../../../shared/ui/Button';
+import { useBookingModal } from '../../../../app/providers/BookingModalProvider';
 import styles from './Hero.module.css';
 
 const Hero = () => {
+  const { openModal } = useBookingModal();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -109,7 +112,8 @@ const Hero = () => {
 
           <motion.div className={styles.actions} variants={itemVariants}>
             <Button 
-              href="#contact" 
+              as="button"
+              onClick={openModal}
               className={styles.glassBtnPrimary}
             >
               Book a Consultation
