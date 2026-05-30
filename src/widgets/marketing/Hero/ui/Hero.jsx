@@ -71,9 +71,39 @@ export const Hero = () => {
           </Link>
           <div className={styles.rightNav}>
             <div className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
-              <a href={`/${lang}/#about-final`} className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</a>
-              <a href={`/${lang}/#services`} className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t('nav.services')}</a>
-              <a href={`/${lang}/#contact`} className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</a>
+              <a 
+                href={`/${lang}/#about-final`} 
+                className={styles.navLink} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('about-final')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {t('nav.about')}
+              </a>
+              <a 
+                href={`/${lang}/#services`} 
+                className={styles.navLink} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {t('nav.services')}
+              </a>
+              <a 
+                href={`/${lang}/#contact`} 
+                className={styles.navLink} 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {t('nav.contact')}
+              </a>
             </div>
             <div className={styles.langSwitcher}>
               <span className={getLangClass('fr')} onClick={() => handleLangChange('fr')}>FR</span>
@@ -143,7 +173,16 @@ export const Hero = () => {
             >
               {t('hero.ctaPrimary')}
             </Button>
-            <Button href={`/${lang}/#services`} className={styles.glassBtnSecondary}>{t('hero.ctaSecondary')}</Button>
+            <Button 
+              as="button"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }} 
+              className={styles.glassBtnSecondary}
+            >
+              {t('hero.ctaSecondary')}
+            </Button>
           </motion.div>
         </motion.div>
       </div>
