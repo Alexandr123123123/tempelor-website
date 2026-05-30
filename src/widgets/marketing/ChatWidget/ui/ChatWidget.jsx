@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { supabase } from '../../../../shared/api/supabase';
 import styles from './ChatWidget.module.css';
 
 export const ChatWidget = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 'welcome', text: "Hello! How can we help you with your electrical project today?", sender: 'support' }
+    { id: 'welcome', text: t("chat.welcome"), sender: 'support' }
   ]);
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef(null);
@@ -44,7 +46,7 @@ export const ChatWidget = () => {
         
       if (data && data.length > 0) {
         setMessages([
-          { id: 'welcome', text: "Hello! How can we help you with your electrical project today?", sender: 'support' },
+          { id: 'welcome', text: t("chat.welcome"), sender: 'support' },
           ...data
         ]);
       }
@@ -154,7 +156,7 @@ export const ChatWidget = () => {
             <div className={styles.header}>
               <div className={styles.headerTitle}>
                 <div className={styles.onlineIndicator} />
-                Support
+                {t("chat.support")}
               </div>
               <button 
                 className={styles.closeButton} 
@@ -173,7 +175,7 @@ export const ChatWidget = () => {
                   key={msg.id} 
                   className={`${styles.message} ${msg.sender === 'user' ? styles.messageUser : styles.messageSupport}`}
                 >
-                  {msg.text}
+                  {msg.id === 'welcome' ? t("chat.welcome") : msg.text}
                 </div>
               ))}
               <div ref={messagesEndRef} />
@@ -183,7 +185,7 @@ export const ChatWidget = () => {
               <input
                 type="text"
                 className={styles.input}
-                placeholder="Type your message..."
+                placeholder={t("chat.placeholder")}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
               />
@@ -206,7 +208,7 @@ export const ChatWidget = () => {
         <svg className={styles.chatIcon} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
         </svg>
-        Chat
+        {t("chat.button")}
       </motion.button>
     </div>
   );

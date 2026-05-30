@@ -128,6 +128,12 @@
   fill: currentColor;
 }
 
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
 .navLinks {
   display: flex;
   gap: 32px;
@@ -147,6 +153,44 @@
 .navLink:hover {
   color: #00c3ff;
   text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+}
+
+.langSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-family-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.langItem {
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.langItem:hover {
+  color: #00c3ff;
+  text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+}
+
+.langActive {
+  color: #ffffff;
+  font-weight: 700;
+  cursor: default;
+}
+
+.langActive:hover {
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.langSep {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 400;
+  user-select: none;
 }
 
 .content {
@@ -329,6 +373,15 @@
     padding: 12px 24px;
     font-size: 0.9rem;
   }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .logoIcon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .burgerBtn {
@@ -387,6 +440,14 @@
     z-index: 99;
     padding: 2rem;
     border-left: 1px solid rgba(0, 195, 255, 0.2);
+  }
+
+  .rightNav {
+    gap: 16px;
+  }
+
+  .langSwitcher {
+    font-size: 0.85rem;
   }
 
   .navLinks.navLinksOpen {

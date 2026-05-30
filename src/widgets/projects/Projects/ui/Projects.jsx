@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useBookingModal } from '../../../../app/providers/BookingModalProvider';
 import styles from './Projects.module.css';
 
@@ -91,6 +92,7 @@ const projectsData = [
 ];
 
 const Projects = () => {
+  const { t } = useTranslation();
   const { openModal } = useBookingModal();
   const [activeProject, setActiveProject] = useState(0);
   const active = projectsData[activeProject];
@@ -264,7 +266,7 @@ const Projects = () => {
         transition={{ duration: 0.6 }}
       >
         <span className={styles.label}>
-          <span className={styles.accentSlash}>//</span> Portfolio
+          <span className={styles.accentSlash}>//</span> {t("portfolio.label")}
         </span>
       </motion.div>
 
@@ -291,12 +293,11 @@ const Projects = () => {
                   <div key={proj.id} className={styles.descCard} style={{ width: '100%' }}>
                     <div className={styles.descYear}>{proj.year}</div>
                     <div className={styles.descLocation}>{proj.location}</div>
-                    <h3 className={styles.descTitle}>{proj.title}</h3>
-                    <p className={styles.descText}>{proj.desc}</p>
+                    <h3 className={styles.descTitle}>{t(`portfolio.${proj.id}.title`)}</h3>
+                    <p className={styles.descText}>{t(`portfolio.${proj.id}.desc`)}</p>
                     <div className={styles.tags}>
-                      {proj.tags.map(tag => (
-                        <span key={tag} className={styles.tag}>{tag}</span>
-                      ))}
+                      <span className={styles.tag}>{t(`portfolio.${proj.id}.tag1`)}</span>
+                      <span className={styles.tag}>{t(`portfolio.${proj.id}.tag2`)}</span>
                     </div>
                   </div>
                 ))}
@@ -306,12 +307,11 @@ const Projects = () => {
               <motion.div className={styles.descCard} variants={itemVariants} style={{ height: maxTextHeight !== 'auto' ? maxTextHeight : undefined }}>
                 <div className={styles.descYear}>{active.year}</div>
                 <div className={styles.descLocation}>{active.location}</div>
-                <h3 className={styles.descTitle}>{active.title}</h3>
-                <p className={styles.descText}>{active.desc}</p>
+                <h3 className={styles.descTitle}>{t(`portfolio.${active.id}.title`)}</h3>
+                <p className={styles.descText}>{t(`portfolio.${active.id}.desc`)}</p>
                 <div className={styles.tags}>
-                  {active.tags.map(tag => (
-                    <span key={tag} className={styles.tag}>{tag}</span>
-                  ))}
+                  <span className={styles.tag}>{t(`portfolio.${active.id}.tag1`)}</span>
+                  <span className={styles.tag}>{t(`portfolio.${active.id}.tag2`)}</span>
                 </div>
               </motion.div>
 
@@ -372,7 +372,7 @@ const Projects = () => {
               </svg>
             </div>
             <div className={styles.bannerInfo}>
-              <h4 className={styles.bannerTitle}>All projects</h4>
+              <h4 className={styles.bannerTitle}>{t("portfolio.allProjects")}</h4>
             </div>
 
             {/* Dropdown Menu */}
@@ -385,7 +385,7 @@ const Projects = () => {
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className={styles.dropdownHeader}>Select a project</div>
+                  <div className={styles.dropdownHeader}>{t("portfolio.selectProject")}</div>
                   <div className={styles.dropdownList}>
                     {projectsData.map((proj, idx) => (
                       <div 
@@ -399,7 +399,7 @@ const Projects = () => {
                           }
                         }}
                       >
-                        {proj.label}
+                        {t(`portfolio.${proj.id}.label`)}
                       </div>
                     ))}
                   </div>
@@ -426,7 +426,7 @@ const Projects = () => {
                     className={`${styles.bannerItem} ${activeProject === globalIndex ? styles.activeBannerItem : ''}`}
                     onClick={() => setActiveProject(globalIndex)}
                   >
-                    <span className={styles.bannerItemLabel}>{proj.label}</span>
+                    <span className={styles.bannerItemLabel}>{t(`portfolio.${proj.id}.label`)}</span>
                   </div>
                 );
               })}
@@ -448,7 +448,7 @@ const Projects = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
-              Book a consultation (→)
+              {t("portfolio.bookConsultation")} (→)
             </motion.button>
           </div>
         </motion.div>
@@ -460,7 +460,7 @@ const Projects = () => {
         >
           {projectsData.map(proj => (
             <div key={proj.id} className={styles.bannerItem}>
-              <span className={styles.bannerItemLabel}>{proj.label}</span>
+              <span className={styles.bannerItemLabel}>{t(`portfolio.${proj.id}.label`)}</span>
             </div>
           ))}
         </div>

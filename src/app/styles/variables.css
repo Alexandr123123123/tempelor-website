@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-primary: #D97706; /* Darker amber/gold for better contrast on light */
   --color-primary-hover: #B45309;

@@ -1,6 +1,6 @@
 .about {
   padding: 100px 0;
-  background-color: #e8f0ff;
+  background: linear-gradient(to bottom, #e8f0ff 0%, #ffffff 100%);
   position: relative;
   width: 100%;
   overflow: hidden;

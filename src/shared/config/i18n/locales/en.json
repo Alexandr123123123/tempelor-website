@@ -1,0 +1,485 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "Electrical Development",
+    "title": "Safety and Technology for Your Home",
+    "desc": "Turnkey design and installation of modern power supply systems. Compliance with all safety standards, ensuring reliable performance for years to come.",
+    "ctaPrimary": "Book a Consultation",
+    "ctaSecondary": "Our Services"
+  },
+  "aboutFinal": {
+    "label": "About us",
+    "title": "Precision. Safety. Innovation.",
+    "whyChooseUs": "Why Choose Us",
+    "whyChooseUsDesc": "Reliable, innovative, and always on time. We bring safety and modern convenience to every home.",
+    "yearsExperience": "15+",
+    "yearsLabel": "Years Experience",
+    "satisfiedClients": "100%",
+    "satisfiedLabel": "Satisfied Clients",
+    "whoWeAre": "Who We Are",
+    "whoWeAreDesc": "Dedicated professionals committed to excellence. We treat every home with the highest level of care and expertise."
+  },
+  "process": {
+    "label": "How We Work",
+    "title": "Our Proven Process",
+    "subtitle": "From the initial handshake to flipping the switch, our transparent workflow ensures peace of mind at every stage.",
+    "items": {
+      "1": {
+        "title": "Request & Consultation",
+        "desc": "We begin with a thorough assessment of your needs, site visit, and preliminary estimation."
+      },
+      "2": {
+        "title": "Engineering Design",
+        "desc": "Our engineers create a detailed blueprint and load calculation tailored to your specific project."
+      },
+      "3": {
+        "title": "Expert Installation",
+        "desc": "Certified electricians execute the plan with precision, using premium materials and equipment."
+      },
+      "4": {
+        "title": "Testing & Handover",
+        "desc": "Rigorous stress testing is performed before the final walk-through and system handover."
+      }
+    }
+  },
+  "features": {
+    "label": "Why Choose Us",
+    "title": "The Tempelor Advantage",
+    "subtitle": "We don't just run wires; we build the invisible foundation of your home. Discover the core principles that make us the leading choice for premium residential electrical deployment.",
+    "items": {
+      "1": {
+        "title": "Uncompromising Safety",
+        "desc": "Multi-level protection systems including RCDs and advanced surge arresters for your peace of mind."
+      },
+      "2": {
+        "title": "Strict Quality Control",
+        "desc": "Every connection is verified, panels are assembled to strict standards, and all lines undergo mandatory load testing."
+      },
+      "3": {
+        "title": "Strict Code Compliance",
+        "desc": "All projects adhere to local building codes, passing any inspection with flying colors."
+      },
+      "4": {
+        "title": "On-Time Delivery",
+        "desc": "Streamlined processes guarantee that your project will be completed within the timeline."
+      }
+    },
+    "bannerTitle": "Tempelor Solutions",
+    "bannerSubtitle": "Smart energy for your home",
+    "consultation": "Free consultation",
+    "safety": "Safety",
+    "installation": "Installation",
+    "support": "Support",
+    "bookBtnLine1": "Book a",
+    "bookBtnLine2": "consultation →"
+  },
+  "services": {
+    "label": "Our Core Services",
+    "title": "What We Do Best",
+    "subtitle": "We deliver state-of-the-art electrical solutions, tailored for safety, longevity, and modern convenience.",
+    "mobileBannerTitle": "Tempelor Power",
+    "mobileBannerSubtitle": "Premium electrical solutions",
+    "bottomBannerTitle": "Tempelor Power",
+    "bottomBannerSubtitle": "Premium electrical solutions",
+    "bookConsultation": "Book Consultation"
+  },
+  "servicesData": {
+    "wiring": {
+      "label": "Wiring & Cabling",
+      "c1t": "Rough-in Wiring",
+      "c1d": "Complete cable routing according to European standards considering all loads.",
+      "c2t": "Professional Wiring Solutions",
+      "c2d": "Professional wiring services for projects of any scale. We handle complete electrical distribution: from the main service entrance to the final points for outlets, switches, and networking. We use reliable materials and design the wiring to be easy to maintain.",
+      "g1": "System Design",
+      "g2": "Cable Routing",
+      "g3": "Easy Maintenance",
+      "g4": "Precision & Safety"
+    },
+    "panels": {
+      "label": "Switchboards",
+      "c1t": "Professional Switchboard Installations",
+      "c1d": "Professional switchboard installations designed for modern high-load households. We build meticulously organized panels equipped with advanced protection systems to safeguard your electronics from surges and electrical faults.",
+      "c2t": "Protection Automation",
+      "c2d": "Image Card (Text ignored)",
+      "g1": "Advanced Protection",
+      "g2": "Smart Integration",
+      "g3": "Professional Design",
+      "g4": "Clean Assembly"
+    },
+    "smart": {
+      "label": "Smart Home",
+      "c1t": "Complete Home Automation",
+      "c1d": "Complete home automation for effortless control over your environment. We synchronize your lighting, climate systems, and motorized blinds, creating a stable infrastructure that works exactly as you want it to.",
+      "g1": "Intelligent Lighting",
+      "g2": "Precision Climate",
+      "g3": "Automated Shading",
+      "g4": "Centralized Control"
+    },
+    "power": {
+      "label": "Backup Power",
+      "c1t": "Professional Power Integration",
+      "c1d": "Professional integration of independent power sources tailored to your home's energy demands. We provide full-cycle installation of UPS systems and standby generators, guaranteeing stable electricity for your most critical systems.",
+      "c2t": "UPS Systems",
+      "c2d": "Uninterruptible power supplies to protect servers, boilers, and smart homes.",
+      "g1": "Standby Generators",
+      "g2": "Battery Storage & UPS",
+      "g3": "Automatic Transfer",
+      "g4": "Total Autonomy"
+    },
+    "heating": {
+      "label": "Heating & Climate",
+      "c1t": "Comprehensive Heating Solutions",
+      "c1d": "Comprehensive heating solutions for absolute comfort in any weather. We specialize in energy-efficient underfloor heating and smart climate control, ensuring your home maintains the perfect temperature all year round.",
+      "g1": "Underfloor Heating",
+      "g2": "Boiler Integration",
+      "g3": "Smart Thermostats",
+      "g4": "App Climate Control",
+      "c3t": "Boiler Room Wiring",
+      "c3d": "Electrical connection of heat pumps, boilers, and pump groups."
+    },
+    "security": {
+      "label": "Security",
+      "c1t": "Video Surveillance",
+      "c1d": "Installation of IP cameras with remote access and cloud storage.",
+      "c2t": "Comprehensive Property Protection",
+      "c2d": "Comprehensive property protection built on smart technologies. From reliable IP cameras and video intercoms to automated water shut-off valves, we install a robust security network tailored to your specific needs.",
+      "g1": "Video Surveillance",
+      "g2": "Access Control",
+      "g3": "Leak Detection",
+      "g4": "Gas & Fire Safety"
+    },
+    "solar": {
+      "label": "Alternative Energy",
+      "c1t": "Renewable Energy Systems",
+      "c1d": "Professional integration of renewable energy systems. We expertly install high-efficiency solar panels, grid inverters, and home EV chargers, creating a seamless ecosystem that maximizes your energy production and usage.",
+      "c2t": "Grid Inverters",
+      "c2d": "Equipment for converting solar energy and transmitting it to the internal grid.",
+      "g1": "Solar Panels",
+      "g2": "Grid Inverters",
+      "g3": "EV Charging",
+      "g4": "Energy Storage"
+    },
+    "ev": {
+      "label": "EV Charging",
+      "c1t": "Premium EV Charging Stations",
+      "c1d": "Power up your vehicle safely and efficiently from the comfort of your home. We install premium EV charging stations with smart load balancing, ensuring fast, reliable charging without overloading your home's electrical grid.",
+      "g1": "Premium Chargers",
+      "g2": "Weatherproof Units",
+      "g3": "Compact Wallboxes",
+      "g4": "Load Balancing",
+      "c3t": "Outdoor Stations",
+      "c3d": "Installation of protected stations in open-air parking spaces."
+    },
+    "spa": {
+      "label": "Spa Zones",
+      "c1t": "Pools & Jacuzzis",
+      "c1d": "Safe connection of pumps, filters, and underwater lighting.",
+      "c2t": "Specialized Electrical Engineering",
+      "c2d": "Specialized electrical engineering for wet and aggressive environments. We safely connect pool filtration systems, steam generators, and specialized lighting using heat-resistant and fully waterproof materials.",
+      "g1": "Pools & Jacuzzis",
+      "g2": "Saunas & Hammams",
+      "g3": "IP68 Protection",
+      "g4": "Pump Filtration"
+    }
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "allProjects": "All projects",
+    "selectProject": "Select a project",
+    "bookConsultation": "Book a consultation",
+    "boudewijn": {
+      "label": "Boudewijn",
+      "title": "Project Boudewijn",
+      "desc": "Complete electrical installation and smart home integration for the Boudewijn project. We ensured maximum safety and flawless aesthetic integration.",
+      "tag1": "Installation",
+      "tag2": "Smart Home"
+    },
+    "edegem": {
+      "label": "Edegem",
+      "title": "Project Edegem",
+      "desc": "Modernization of electrical systems and custom lighting design.",
+      "tag1": "Modernization",
+      "tag2": "Lighting"
+    },
+    "heideland": {
+      "label": "Heideland",
+      "title": "Project Heideland",
+      "desc": "Full residential rewiring and safety upgrades.",
+      "tag1": "Rewiring",
+      "tag2": "Safety"
+    },
+    "laureysstraat": {
+      "label": "Laureysstraat",
+      "title": "Project Laureysstraat",
+      "desc": "Advanced panel upgrades and exterior lighting.",
+      "tag1": "Panel Upgrade",
+      "tag2": "Exterior"
+    },
+    "leksklyuze": {
+      "label": "Leksklyuze",
+      "title": "Project Leksklyuze",
+      "desc": "Smart climate control and network infrastructure.",
+      "tag1": "Network",
+      "tag2": "Automation"
+    },
+    "oogststraat": {
+      "label": "Oogststraat",
+      "title": "Project Oogststraat",
+      "desc": "Comprehensive energy management and solar integration.",
+      "tag1": "Solar",
+      "tag2": "Energy"
+    },
+    "potter": {
+      "label": "Potter",
+      "title": "Project Potter",
+      "desc": "Industrial style residential electrical setup and custom routing.",
+      "tag1": "Industrial",
+      "tag2": "Routing"
+    },
+    "spoorweglaan": {
+      "label": "Spoorweglaan",
+      "title": "Project Spoorweglaan",
+      "desc": "Luxury estate electrical foundation and security systems.",
+      "tag1": "Security",
+      "tag2": "Luxury Estate"
+    }
+  },
+  "reviews": {
+    "label": "Testimonials",
+    "title": "What Our Clients Say",
+    "r1": {
+      "role": "Homeowner",
+      "text": "Tempelor completely rewired our 1950s house. The team was incredibly professional, clean, and the final panel looks like a work of art. I sleep much better knowing our home is safe."
+    },
+    "r2": {
+      "role": "Architect",
+      "text": "As an architect, I appreciate contractors who understand both functionality and aesthetics. Tempelor's smart home integration was flawless. Highly recommended for luxury builds."
+    },
+    "r3": {
+      "role": "Business Owner",
+      "text": "We hired them for a custom lighting and electrical setup in our new smart home. They finished exactly on schedule and passed all city inspections on the very first try."
+    }
+  },
+  "contact": {
+    "label": "Get in Touch",
+    "title": "Request an Engineer",
+    "subtitle": "Ready to upgrade your home's electrical system? Leave a request, and our lead engineer will contact you within 30 minutes for a free consultation.",
+    "phone": "Phone",
+    "email": "Email",
+    "office": "Office",
+    "officeAddress1": "123 Energy Blvd, Tech District",
+    "officeAddress2": "New York, NY 10001",
+    "successTitle": "Message Sent!",
+    "successText": "We will reach out to you very soon.",
+    "formFirstName": "First Name",
+    "formFirstNamePh": "John",
+    "formLastName": "Last Name",
+    "formLastNamePh": "Doe",
+    "formEmail": "Email Address",
+    "formEmailPh": "john.doe@example.com",
+    "formMessage": "Message",
+    "formMessagePh": "Briefly describe your project...",
+    "btnSending": "Sending...",
+    "btnSend": "Send Request"
+  },
+  "footer": {
+    "desc": "Premium residential electrical deployment. We build the invisible foundation of your home.",
+    "mission": "Our Mission",
+    "slogan": "Flawless Electrical Solutions.",
+    "services": "Services",
+    "link1": "Wiring Setup",
+    "link2": "Panel Upgrades",
+    "link3": "Smart Home",
+    "link4": "Lighting Design",
+    "link5": "Maintenance",
+    "contactTitle": "Contact",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "modal": {
+    "title": "Book a Consultation",
+    "desc": "Leave your phone number and our engineers will contact you shortly to discuss your project.",
+    "btnSubmit": "Request Callback",
+    "successTitle": "Request Sent!",
+    "successDesc": "We have received your contact details and will reach out to you very soon."
+  },
+  "chat": {
+    "welcome": "Hello! How can we help you with your electrical project today?",
+    "support": "Support",
+    "placeholder": "Type your message...",
+    "button": "Chat"
+  },
+  "servicesPage": {
+    "hero": {
+      "label": "Expertise",
+      "title": "Our Premium Services",
+      "desc": "From complete electrical wiring and smart home integration to solar panels and EV charging. We deliver top-tier solutions tailored to your needs."
+    },
+    "blocks": {
+      "block1": {
+        "title": "Engineering & Basic Wiring",
+        "description": "Professional electrical layout, robust switchboard assembly, and comprehensive heating solutions forming the core of any modern building."
+      },
+      "block2": {
+        "title": "Smart Home",
+        "description": "Seamless automation of lighting, climate control, and smart shading, bringing ultimate comfort and intelligent living to your fingertips."
+      },
+      "block3": {
+        "title": "Lighting & Spa Zones",
+        "description": "Expert installation of dynamic facade lighting, landscape illumination, and specialized waterproof electrical systems for pools and saunas."
+      },
+      "block4": {
+        "title": "Energy Independence",
+        "description": "Reliable backup power systems, advanced solar integration, and high-efficiency EV charging stations for sustainable energy."
+      },
+      "block5": {
+        "title": "Security & Protection",
+        "description": "State-of-the-art surveillance, smart access control, and proactive anti-leakage systems to ensure maximum safety for your property."
+      }
+    },
+    "cats": {
+      "wiring": "Wiring & Cabling",
+      "panels": "Switchboards",
+      "heating": "Heating & Climate",
+      "smart": "Smart Home",
+      "lighting": "Lighting Systems",
+      "spa": "Spa Zones",
+      "backup": "Backup Power",
+      "solar": "Alternative Energy",
+      "ev": "EV Charging",
+      "security": "Security Systems"
+    },
+    "cards": {
+      "wiring_1": {
+        "title": "Rough-in Wiring",
+        "desc": "Complete cable routing according to European standards considering all loads."
+      },
+      "wiring_2": {
+        "title": "Devices Installation",
+        "desc": "Installation of sockets, switches, and thermostats with perfect alignment."
+      },
+      "wiring_3": {
+        "title": "Low-Voltage Networks",
+        "desc": "Organization of seamless Wi-Fi, internet, and multi-room systems throughout the house."
+      },
+      "panels_1": {
+        "title": "Main Distribution Boards",
+        "desc": "Design and assembly of distribution boards based on premium components."
+      },
+      "panels_2": {
+        "title": "Protection Automation",
+        "desc": "Installation of modern protection against leakage currents (RCD), short circuits, and surges."
+      },
+      "panels_3": {
+        "title": "Zonal Subpanels",
+        "desc": "Installation of additional panels for garages, boiler rooms, saunas, and outdoor lighting."
+      },
+      "heating_1": {
+        "title": "Underfloor Heating",
+        "desc": "Installation of heating mats and cables with smart thermostats."
+      },
+      "heating_2": {
+        "title": "De-icing Systems",
+        "desc": "Heating for roofs, gutters, driveways, and open terraces."
+      },
+      "heating_3": {
+        "title": "Boiler Room Wiring",
+        "desc": "Electrical connection of heat pumps, boilers, and pump groups."
+      },
+      "smart_1": {
+        "title": "Lighting Control",
+        "desc": "Lighting scenarios, dimming, and centralized control (KNX, Loxone)."
+      },
+      "smart_2": {
+        "title": "Climate Control",
+        "desc": "Intelligent control of heating, air conditioning, and ventilation."
+      },
+      "smart_3": {
+        "title": "Motorized Systems",
+        "desc": "Automatic opening of curtains, gates, blinds, and projection screens."
+      },
+      "lighting_1": {
+        "title": "Facade Illumination",
+        "desc": "Highlighting house architecture with all-weather waterproof fixtures."
+      },
+      "lighting_2": {
+        "title": "Landscape Lighting",
+        "desc": "Illumination of garden paths, trees, terraces, and BBQ areas."
+      },
+      "lighting_3": {
+        "title": "Architectural Interior",
+        "desc": "Integration of magnetic tracks, hidden niches, and shadow LED profiles."
+      },
+      "spa_1": {
+        "title": "Pools & Jacuzzis",
+        "desc": "Safe connection of pumps, filters, and underwater lighting."
+      },
+      "spa_2": {
+        "title": "Saunas & Hammams",
+        "desc": "Heat-resistant installation for electric heaters, steam generators, and LED lighting."
+      },
+      "spa_3": {
+        "title": "IP68 Moisture Protection",
+        "desc": "Use of specialized materials for aggressive wet environments."
+      },
+      "backup_1": {
+        "title": "Generators & ATS",
+        "desc": "Installation of diesel/gas generators with automatic transfer switches during outages."
+      },
+      "backup_2": {
+        "title": "UPS Systems",
+        "desc": "Uninterruptible power supplies to protect servers, boilers, and smart homes."
+      },
+      "backup_3": {
+        "title": "Inverter Systems",
+        "desc": "Battery assemblies to ensure complete silence and autonomy at night."
+      },
+      "solar_1": {
+        "title": "Solar Panels",
+        "desc": "Installation of panels on roofs or properties for partial home autonomy."
+      },
+      "solar_2": {
+        "title": "Grid Inverters",
+        "desc": "Equipment for converting solar energy and transmitting it to the internal grid."
+      },
+      "solar_3": {
+        "title": "Integration",
+        "desc": "Synchronization of solar batteries with the generator and overall smart home system."
+      },
+      "ev_1": {
+        "title": "Wallbox Stations",
+        "desc": "Installation of fast and powerful EV charging stations in the garage."
+      },
+      "ev_2": {
+        "title": "Load Balancing",
+        "desc": "Smart load distribution so charging does not overload the home grid."
+      },
+      "ev_3": {
+        "title": "Outdoor Stations",
+        "desc": "Installation of protected stations in open-air parking spaces."
+      },
+      "security_1": {
+        "title": "Video Surveillance",
+        "desc": "Installation of IP cameras with remote access and cloud storage."
+      },
+      "security_2": {
+        "title": "Access Control",
+        "desc": "Installation of video intercoms, electric locks, and access control systems for gates."
+      },
+      "security_3": {
+        "title": "Accident Protection",
+        "desc": "Installation of leak and gas sensors with automatic valve shut-off."
+      }
+    },
+    "banner": {
+      "title": "Professional",
+      "subtitle": "Guaranteed quality and safety standards",
+      "btn": "Request Service"
+    }
+  }
+}

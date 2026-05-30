@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { IMaskInput } from 'react-imask';
 import { supabase } from '../../../../shared/api/supabase';
 import styles from './BookingModal.module.css';
 
 export const BookingModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [phone, setPhone] = useState('+32 (');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const maskPlaceholder = '+32 (470) 000-00-00';
@@ -87,9 +89,9 @@ export const BookingModal = ({ isOpen, onClose }) => {
             {!isSubmitted ? (
               <>
                 <div className={styles.header}>
-                  <h3 className={styles.title}>Book a Consultation</h3>
+                  <h3 className={styles.title}>{t("modal.title")}</h3>
                   <p className={styles.description}>
-                    Leave your phone number and our engineers will contact you shortly to discuss your project.
+                    {t("modal.desc")}
                   </p>
                 </div>
                 
@@ -126,7 +128,7 @@ export const BookingModal = ({ isOpen, onClose }) => {
                     />
                   </div>
                   <button type="submit" className={styles.submit}>
-                    Request Callback
+                    {t("modal.btnSubmit")}
                   </button>
                 </form>
               </>
@@ -141,8 +143,8 @@ export const BookingModal = ({ isOpen, onClose }) => {
                     <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3>Request Sent!</h3>
-                <p>We have received your contact details and will reach out to you very soon.</p>
+                <h3>{t("modal.successTitle")}</h3>
+                <p>{t("modal.successDesc")}</p>
               </motion.div>
             )}
           </motion.div>

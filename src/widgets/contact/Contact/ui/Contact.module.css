@@ -306,7 +306,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 195, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 195, 255, 0.1) 1px, transparent 1px);
   background-size: 30px 30px;
@@ -354,24 +354,25 @@
   .bentoContent h4 {
     font-size: clamp(0.75rem, 3.5vw, 0.95rem);
   }
+
   .bentoContent p {
     font-size: clamp(0.85rem, 4.2vw, 1.1rem);
   }
-  
+
   .formCard {
     padding: clamp(20px, 6vw, 40px);
   }
-  
+
   .inputGroup label {
     font-size: clamp(0.8rem, 3.5vw, 0.9rem);
   }
-  
+
   .inputGroup input,
   .inputGroup textarea {
     font-size: clamp(0.9rem, 4vw, 1rem);
     padding: clamp(12px, 3.5vw, 16px);
   }
-  
+
   .submitBtn {
     font-size: clamp(0.95rem, 4vw, 1.1rem);
     padding: clamp(14px, 4vw, 18px) clamp(24px, 6vw, 32px);

@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './ServicesGrouped.module.css';
+import { useTranslation } from 'react-i18next';
 
 import heroImg from '../../../../assets/hero.png';
 import panelAfterImg from '../../../../assets/panel_after.png';
 import panelBeforeImg from '../../../../assets/panel_before.png';
 
 export const ServicesGrouped = () => {
+  const { t } = useTranslation();
   const blocks = [
     {
       id: "block1",
@@ -249,9 +251,9 @@ export const ServicesGrouped = () => {
           >
             <div className={isSingleCard ? styles.horizontalText : styles.headerGlass}>
               <span className={styles.label}>
-                <span className={styles.accentSlash}>//</span> {block.title}
+                <span className={styles.accentSlash}>//</span> {t(`servicesPage.blocks.${block.id}.title`)}
               </span>
-              <p className={styles.description}>{block.description}</p>
+              <p className={styles.description}>{t(`servicesPage.blocks.${block.id}.description`)}</p>
             </div>
             
             <div className={`${isSingleCard ? styles.horizontalCard : styles.grid} ${block.categories.length === 2 ? styles.gridTwoCols : ''}`}>
@@ -268,10 +270,10 @@ export const ServicesGrouped = () => {
                   whileHover={isSingleCard ? {} : { y: -5 }}
                 >
                   <div className={styles.iconWrapper}>{cat.icon}</div>
-                  <h3 className={styles.cardTitle}>{cat.label}</h3>
+                  <h3 className={styles.cardTitle}>{t(`servicesPage.cats.${cat.id}`)}</h3>
                   <ul className={styles.cardList}>
                     {cat.cards.map((card) => (
-                      <li key={card.id}>{card.title}</li>
+                      <li key={card.id}>{t(`servicesPage.cards.${cat.id}_${card.id}.title`)}</li>
                     ))}
                   </ul>
                 </motion.div>
@@ -288,13 +290,13 @@ export const ServicesGrouped = () => {
                     </svg>
                   </div>
                   <div className={styles.bannerInfo}>
-                    <h4 className={styles.bannerTitle}>Professional {block.title}</h4>
-                    <p className={styles.bannerSubtitle}>Guaranteed quality and safety standards</p>
+                    <h4 className={styles.bannerTitle}>{t("servicesPage.banner.title")} {t(`servicesPage.blocks.${block.id}.title`)}</h4>
+                    <p className={styles.bannerSubtitle}>{t("servicesPage.banner.subtitle")}</p>
                   </div>
                 </div>
                 <div className={styles.bannerRight}>
                   <button className={styles.bannerBtn}>
-                    Request Service
+                    {t("servicesPage.banner.btn")}
                   </button>
                 </div>
               </div>

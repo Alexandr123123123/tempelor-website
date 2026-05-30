@@ -1,16 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useBookingModal } from '../../../../app/providers/BookingModalProvider';
 import styles from './Features.module.css';
 
 const Features = () => {
   const { openModal } = useBookingModal();
+  const { t } = useTranslation();
 
   const features = [
     {
       id: 1,
-      title: 'Uncompromising Safety',
-      desc: 'Multi-level protection systems including RCDs and advanced surge arresters for your peace of mind.',
+      title: t('features.items.1.title'),
+      desc: t('features.items.1.desc'),
       icon: (
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round"/>
@@ -20,8 +22,8 @@ const Features = () => {
     },
     {
       id: 2,
-      title: 'Strict Quality Control',
-      desc: 'Every connection is verified, panels are assembled to strict standards, and all lines undergo mandatory load testing.',
+      title: t('features.items.2.title'),
+      desc: t('features.items.2.desc'),
       icon: (
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8"/>
@@ -32,8 +34,8 @@ const Features = () => {
     },
     {
       id: 3,
-      title: 'Strict Code Compliance',
-      desc: 'All projects adhere to local building codes, passing any inspection with flying colors.',
+      title: t('features.items.3.title'),
+      desc: t('features.items.3.desc'),
       icon: (
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" strokeLinecap="round" strokeLinejoin="round"/>
@@ -46,8 +48,8 @@ const Features = () => {
     },
     {
       id: 4,
-      title: 'On-Time Delivery',
-      desc: 'Streamlined processes guarantee that your project will be completed within the timeline.',
+      title: t('features.items.4.title'),
+      desc: t('features.items.4.desc'),
       icon: (
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -67,12 +69,11 @@ const Features = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <span className={styles.label}>
-            <span className={styles.accentSlash}>//</span> Why Choose Us
+            <span className={styles.accentSlash}>//</span> {t('features.label')}
           </span>
-          <h2 className={styles.title}>The Tempelor Advantage</h2>
+          <h2 className={styles.title}>{t('features.title')}</h2>
           <p className={styles.subtitle}>
-            We don't just run wires; we build the invisible foundation of your home. 
-            Discover the core principles that make us the leading choice for premium residential electrical deployment.
+            {t('features.subtitle')}
           </p>
         </motion.div>
 
@@ -104,20 +105,20 @@ const Features = () => {
           viewport={{ once: true, margin: "-50px" }}
         >
           <div className={styles.bannerInfo}>
-            <h4 className={styles.bannerTitle}>Tempelor Solutions</h4>
-            <p className={styles.bannerSubtitle}>Smart energy for your home</p>
+            <h4 className={styles.bannerTitle}>{t('features.bannerTitle')}</h4>
+            <p className={styles.bannerSubtitle}>{t('features.bannerSubtitle')}</p>
           </div>
 
           <div className={styles.bannerMiddle}>
-            <span className={styles.bannerItemLabel}>Free consultation</span>
-            <span className={styles.bannerItemLabel}>Safety</span>
-            <span className={styles.bannerItemLabel}>Installation</span>
-            <span className={styles.bannerItemLabel}>Support</span>
+            <span className={styles.bannerItemLabel}>{t('features.consultation')}</span>
+            <span className={styles.bannerItemLabel}>{t('features.safety')}</span>
+            <span className={styles.bannerItemLabel}>{t('features.installation')}</span>
+            <span className={styles.bannerItemLabel}>{t('features.support')}</span>
           </div>
 
           <button className={styles.bannerBtn} onClick={openModal}>
-            <span className={styles.btnLine1}>Book a</span>
-            <span className={styles.btnLine2}>consultation →</span>
+            <span className={styles.btnLine1}>{t('features.bookBtnLine1')}</span>
+            <span className={styles.btnLine2}>{t('features.bookBtnLine2')}</span>
           </button>
         </motion.div>
       </div>

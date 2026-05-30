@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HomePage } from '../pages/Home';
 import { ServicesPage } from '../pages/Services';
 import { BookingModalProvider } from './providers/BookingModalProvider';
+import { LanguageProvider } from './providers/LanguageProvider';
 import { ChatWidget } from '../widgets/marketing/ChatWidget/ui/ChatWidget';
 
 function App() {
@@ -10,8 +11,11 @@ function App() {
       <BookingModalProvider>
         <div className="app">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/" element={<Navigate to="/fr" replace />} />
+            <Route path="/:lang" element={<LanguageProvider />}>
+              <Route index element={<HomePage />} />
+              {/* <Route path="services" element={<ServicesPage />} /> */}
+            </Route>
           </Routes>
           <ChatWidget />
         </div>

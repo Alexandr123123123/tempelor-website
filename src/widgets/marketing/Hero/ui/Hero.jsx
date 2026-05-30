@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import heroImg from '../../../../assets/hero.png';
 import { Button } from '../../../../shared/ui/Button';
 import { useBookingModal } from '../../../../app/providers/BookingModalProvider';
 import styles from './Hero.module.css';
 
-const Hero = () => {
+export const Hero = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { openModal } = useBookingModal();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language || 'fr';
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLangChange = (newLang) => {
+    const pathParts = location.pathname.split('/');
+    if (pathParts.length > 1 && ['fr', 'nl', 'en'].includes(pathParts[1])) {
+      pathParts[1] = newLang;
+      navigate(pathParts.join('/') + location.search + location.hash);
+    } else {
+      navigate(`/${newLang}` + location.search + location.hash);
+    }
+  };
+
+  const getLangClass = (l) => `${styles.langItem} ${lang === l ? styles.langActive : ''}`;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,13 +57,11 @@ const Hero = () => {
     size: `${Math.random() * 3 + 2}px`,
   })), []);
 
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   return (
     <>
       <nav className={styles.nav}>
         <div className={styles.navContainer}>
-          <Link to="/" className={styles.logo} style={{textDecoration: 'none'}}>
+          <Link to={`/${lang}`} className={styles.logo} style={{textDecoration: 'none'}}>
             <div className={styles.logoIcon}>
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -52,18 +69,27 @@ const Hero = () => {
             </div>
             Tempelor
           </Link>
-          <button 
-            className={`${styles.burgerBtn} ${isMenuOpen ? styles.open : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <div className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
-            <Link to="/#about1" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>About</Link>
-            <Link to="/services" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Services</Link>
-            <Link to="/#contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Contact</Link>
+          <div className={styles.rightNav}>
+            <div className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
+              <a href={`/${lang}/#about-final`} className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</a>
+              <a href={`/${lang}/#services`} className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t('nav.services')}</a>
+              <a href={`/${lang}/#contact`} className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</a>
+            </div>
+            <div className={styles.langSwitcher}>
+              <span className={getLangClass('fr')} onClick={() => handleLangChange('fr')}>FR</span>
+              <span className={styles.langSep}>/</span>
+              <span className={getLangClass('nl')} onClick={() => handleLangChange('nl')}>NL</span>
+              <span className={styles.langSep}>/</span>
+              <span className={getLangClass('en')} onClick={() => handleLangChange('en')}>EN</span>
+            </div>
+            <button 
+              className={`${styles.burgerBtn} ${isMenuOpen ? styles.open : ''}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
       </nav>
@@ -98,15 +124,14 @@ const Hero = () => {
           {/* Glowing background blobs removed for now */}
 
           <motion.span className={styles.label} variants={itemVariants}>
-            <span className={styles.accentSlash}>//</span> Electrical Development
+            <span className={styles.accentSlash}>//</span> {t('hero.label')}
           </motion.span>
           <motion.div className={styles.glassPanel} variants={itemVariants}>
             <motion.h1 className={styles.title} variants={itemVariants}>
-              Safety and Technology for Your Home
+              {t('hero.title')}
             </motion.h1>
             <motion.p className={styles.desc} variants={itemVariants}>
-              Turnkey design and installation of modern power supply systems. 
-              Compliance with all safety standards, ensuring reliable performance for years to come.
+              {t('hero.desc')}
             </motion.p>
           </motion.div>
 
@@ -116,9 +141,9 @@ const Hero = () => {
               onClick={openModal}
               className={styles.glassBtnPrimary}
             >
-              Book a Consultation
+              {t('hero.ctaPrimary')}
             </Button>
-            <Button href="#services" className={styles.glassBtnSecondary}>Our Services</Button>
+            <Button href={`/${lang}/#services`} className={styles.glassBtnSecondary}>{t('hero.ctaSecondary')}</Button>
           </motion.div>
         </motion.div>
       </div>

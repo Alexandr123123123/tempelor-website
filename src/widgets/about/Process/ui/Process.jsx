@@ -1,28 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import styles from './Process.module.css';
 
 const Process = () => {
+  const { t } = useTranslation();
+
   const steps = [
     {
       step: "01",
-      title: "Request & Consultation",
-      desc: "We begin with a thorough assessment of your needs, site visit, and preliminary estimation."
+      title: t('process.items.1.title'),
+      desc: t('process.items.1.desc')
     },
     {
       step: "02",
-      title: "Engineering Design",
-      desc: "Our engineers create a detailed blueprint and load calculation tailored to your specific project."
+      title: t('process.items.2.title'),
+      desc: t('process.items.2.desc')
     },
     {
       step: "03",
-      title: "Expert Installation",
-      desc: "Certified electricians execute the plan with precision, using premium materials and equipment."
+      title: t('process.items.3.title'),
+      desc: t('process.items.3.desc')
     },
     {
       step: "04",
-      title: "Testing & Handover",
-      desc: "Rigorous stress testing is performed before the final walk-through and system handover."
+      title: t('process.items.4.title'),
+      desc: t('process.items.4.desc')
     }
   ];
 
@@ -39,12 +42,11 @@ const Process = () => {
           transition={{ duration: 0.6 }}
         >
           <span className={styles.label}>
-            <span className={styles.accentSlash}>//</span> How We Work
+            <span className={styles.accentSlash}>//</span> {t('process.label')}
           </span>
-          <h2 className={styles.title}>Our Proven Process</h2>
+          <h2 className={styles.title}>{t('process.title')}</h2>
           <p className={styles.subtitle}>
-            From the initial handshake to flipping the switch, our transparent workflow
-            ensures peace of mind at every stage.
+            {t('process.subtitle')}
           </p>
         </motion.div>
 

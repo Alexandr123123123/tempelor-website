@@ -1,8 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './AboutFinal.module.css';
 
 import panelAfter from '../../../../assets/panel_after.png';
 import heroImg from '../../../../assets/hero.png';
+import aboutPrecision from '../../../../assets/about_precision.png';
+import aboutTeam from '../../../../assets/about_team.png';
+import aboutInstallation from '../../../../assets/about_installation.png';
+import smartHomeImg from '../../../../assets/smart_home_img.png';
 
 const layout1366 = {
   headerCard: { x: 20, y: 0, rotate: 0, zIndex: 5, width: 700 },
@@ -156,85 +161,6 @@ const getCurrentLayout = () => {
   return layout350;
 };
 
-const cards = [
-  {
-    id: 'headerCard',
-    className: 'textCard headerCard',
-    content: (
-      <>
-        <span className={styles.label}>
-          <span className={styles.accentSlash}>//</span> About us
-        </span>
-        <h2 className={styles.title}>Precision. Safety. Innovation.</h2>
-      </>
-    )
-  },
-  {
-    id: 'card1',
-    className: 'textCard card1',
-    content: (
-      <>
-        <h3 className={styles.cardTitle}>Why Choose Us</h3>
-        <p className={styles.cardDesc}>
-          Reliable, innovative, and always on time. We bring safety and modern convenience to every home.
-        </p>
-      </>
-    )
-  },
-  {
-    id: 'card2',
-    className: 'card2 imageCard',
-    content: <img src={panelAfter} alt="Modern Electrical Panel" />
-  },
-  {
-    id: 'card3',
-    className: 'textCard card3',
-    content: (
-      <>
-        <div className={styles.statValue}>15+</div>
-        <div className={styles.statLabel}>Years Experience</div>
-      </>
-    )
-  },
-  {
-    id: 'card4',
-    className: 'textCard card4',
-    content: (
-      <>
-        <div className={styles.statValue}>100%</div>
-        <div className={styles.statLabel}>Satisfied Clients</div>
-      </>
-    )
-  },
-  {
-    id: 'card5',
-    className: 'card5 imageCard',
-    content: <img src={heroImg} alt="Smart Home" />
-  },
-  {
-    id: 'card6',
-    className: 'textCard card6',
-    content: (
-      <>
-        <h3 className={styles.cardTitle}>Who We Are</h3>
-        <p className={styles.cardDesc}>
-          Dedicated professionals committed to excellence. We treat every home with the highest level of care and expertise.
-        </p>
-      </>
-    )
-  },
-  {
-    id: 'extraCard1',
-    className: 'extraCard imageCard',
-    content: <img src={heroImg} alt="Custom" />
-  },
-  {
-    id: 'extraCard2',
-    className: 'extraCard imageCard',
-    content: <img src={heroImg} alt="Custom" />
-  }
-];
-
 const getCardStyle = (layoutItem = {}) => ({
   '--x': `${layoutItem.x || 0}px`,
   '--y': `${layoutItem.y || 0}px`,
@@ -258,6 +184,86 @@ const getCardStyle = (layoutItem = {}) => ({
 
 const AboutFinal = () => {
   const [layout, setLayout] = useState(getCurrentLayout);
+  const { t } = useTranslation();
+
+  const cards = useMemo(() => [
+    {
+      id: 'headerCard',
+      className: 'textCard headerCard',
+      content: (
+        <>
+          <span className={styles.label}>
+            <span className={styles.accentSlash}>//</span> {t('aboutFinal.label')}
+          </span>
+          <h2 className={styles.title}>{t('aboutFinal.title')}</h2>
+        </>
+      )
+    },
+    {
+      id: 'card1',
+      className: 'textCard card1',
+      content: (
+        <>
+          <h3 className={styles.cardTitle}>{t('aboutFinal.whyChooseUs')}</h3>
+          <p className={styles.cardDesc}>
+            {t('aboutFinal.whyChooseUsDesc')}
+          </p>
+        </>
+      )
+    },
+    {
+      id: 'card2',
+      className: 'card2 imageCard',
+      content: <img src={aboutPrecision} alt="Precision Work" />
+    },
+    {
+      id: 'card3',
+      className: 'textCard card3',
+      content: (
+        <>
+          <div className={styles.statValue}>{t('aboutFinal.yearsExperience')}</div>
+          <div className={styles.statLabel}>{t('aboutFinal.yearsLabel')}</div>
+        </>
+      )
+    },
+    {
+      id: 'card4',
+      className: 'textCard card4',
+      content: (
+        <>
+          <div className={styles.statValue}>{t('aboutFinal.satisfiedClients')}</div>
+          <div className={styles.statLabel}>{t('aboutFinal.satisfiedLabel')}</div>
+        </>
+      )
+    },
+    {
+      id: 'card5',
+      className: 'card5 imageCard',
+      content: <img src={aboutTeam} alt="Team Planning" />
+    },
+    {
+      id: 'card6',
+      className: 'textCard card6',
+      content: (
+        <>
+          <h3 className={styles.cardTitle}>{t('aboutFinal.whoWeAre')}</h3>
+          <p className={styles.cardDesc}>
+            {t('aboutFinal.whoWeAreDesc')}
+          </p>
+        </>
+      )
+    },
+    {
+      id: 'extraCard1',
+      className: 'extraCard imageCard',
+      content: <img src={aboutInstallation} alt="Installation Action" />
+    },
+    {
+      id: 'extraCard2',
+      className: 'extraCard imageCard',
+      content: <img src={smartHomeImg} alt="Quality Control" />
+    }
+  ], [t]);
 
   useEffect(() => {
     const handleResize = () => setLayout(getCurrentLayout());

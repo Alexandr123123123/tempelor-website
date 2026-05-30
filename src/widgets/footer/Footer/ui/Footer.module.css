@@ -41,13 +41,10 @@
 
 .logo {
   font-family: var(--font-family-main);
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 0.5rem + 2.5vw, 2rem);
   font-weight: 900;
   color: #ffffff;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .logoAccent {
@@ -57,13 +54,13 @@
 .desc {
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.5rem + 1vw, 0.95rem);
   max-width: 300px;
 }
 
 .column h4 {
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 0.6rem + 1.2vw, 1.1rem);
   font-weight: 700;
   margin: 0 0 24px 0;
   letter-spacing: 0.5px;
@@ -81,7 +78,7 @@
 .links a {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.5rem + 1vw, 0.95rem);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -104,6 +101,26 @@
   width: 12px;
 }
 
+.slogan {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.95rem, 0.6rem + 1.2vw, 1.1rem);
+  line-height: 1.6;
+  font-style: italic;
+  position: relative;
+  padding-left: 16px;
+}
+
+.slogan::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: #00c3ff;
+  border-radius: 2px;
+}
+
 .contactInfo {
   display: flex;
   flex-direction: column;
@@ -115,7 +132,7 @@
   align-items: flex-start;
   gap: 12px;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.5rem + 1vw, 0.95rem);
   line-height: 1.5;
 }
 
@@ -139,7 +156,7 @@
 
 .copyright {
   color: rgba(255, 255, 255, 0.4);
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 0.4rem + 1vw, 0.85rem);
 }
 
 .legalLinks {
@@ -150,7 +167,7 @@
 .legalLinks a {
   color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 0.4rem + 1vw, 0.85rem);
   transition: color 0.3s ease;
 }
 
@@ -168,6 +185,68 @@
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .brand, .column {
+    align-items: center;
+  }
+
+  .desc {
+    max-width: 100%;
+  }
+
+  .logo { 
+    font-size: clamp(1.6rem, 1rem + 3vw, 2.2rem); 
+  }
+  .desc, .links a, .contactItem { 
+    font-size: clamp(0.9rem, 0.5rem + 1.5vw, 1.1rem); 
+  }
+  .column h4, .slogan { 
+    font-size: clamp(1rem, 0.5rem + 2vw, 1.3rem); 
+  }
+  .copyright, .legalLinks a { 
+    font-size: clamp(0.8rem, 0.5rem + 1.2vw, 0.95rem); 
+  }
+
+  .slogan {
+    padding-left: 0;
+    padding-top: 16px;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 32px;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .slogan::before {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: auto;
+    width: 30px;
+    height: 2px;
+  }
+
+  .contactInfo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+  }
+
+  .contactItem {
+    align-items: center;
+  }
+
+  .contactItem:nth-child(3) {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
   
   .bottom {
@@ -177,5 +256,21 @@
   
   .legalLinks {
     justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .contactInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  
+  .contactItem, .contactItem:nth-child(3) {
+    width: auto;
+    justify-content: flex-start;
+    text-align: left;
   }
 }

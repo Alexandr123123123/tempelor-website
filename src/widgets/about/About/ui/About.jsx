@@ -18,10 +18,10 @@ const About = () => {
           <div className={`${styles.card} ${styles.textCard} ${styles.span2x2}`}>
             <h3 className={styles.cardTitle}>Who We Are</h3>
             <p className={styles.cardDesc}>
-              Tempelor is a premier electrical contractor dedicated to redefining residential power systems. 
-              With a deep understanding of both traditional engineering and cutting-edge smart home technology, 
-              we bridge the gap between robust infrastructure and modern convenience. <br/><br/>
-              Every wire we run, every panel we install is a testament to our commitment to absolute 
+              Tempelor is a premier electrical contractor dedicated to redefining residential power systems.
+              With a deep understanding of both traditional engineering and cutting-edge smart home technology,
+              we bridge the gap between robust infrastructure and modern convenience. <br /><br />
+              Every wire we run, every panel we install is a testament to our commitment to absolute
               perfection and uncompromising safety standards.
             </p>
           </div>
@@ -52,7 +52,7 @@ const About = () => {
           <div className={`${styles.card} ${styles.textCard} ${styles.span2x1}`}>
             <h3 className={styles.cardTitle} style={{ marginBottom: '8px' }}>100% Certified & Insured</h3>
             <p className={styles.cardDesc}>
-              Fully licensed professionals compliant with all state and federal electrical codes. 
+              Fully licensed professionals compliant with all state and federal electrical codes.
               Your peace of mind is our highest priority.
             </p>
           </div>

@@ -1,10 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import styles from './ServicesHero.module.css';
 
 export const ServicesHero = () => {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language || 'fr';
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleLangChange = (newLang) => {
+    const pathParts = location.pathname.split('/');
+    if (pathParts.length > 1 && ['fr', 'nl', 'en'].includes(pathParts[1])) {
+      pathParts[1] = newLang;
+      navigate(pathParts.join('/') + location.search + location.hash);
+    } else {
+      navigate(`/${newLang}` + location.search + location.hash);
+    }
+  };
+  const getLangClass = (l) => `${styles.langItem} ${lang === l ? styles.langActive : ''}`;
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -29,7 +44,7 @@ export const ServicesHero = () => {
     <>
       <nav className={styles.nav}>
         <div className={styles.navContainer}>
-          <Link to="/" className={styles.logo} style={{textDecoration: 'none'}}>
+          <Link to={`/${lang}`} className={styles.logo} style={{textDecoration: 'none'}}>
             <div className={styles.logoIcon}>
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -37,10 +52,19 @@ export const ServicesHero = () => {
             </div>
             Tempelor
           </Link>
-          <div className={styles.navLinks}>
-            <Link to="/#about1" className={styles.navLink}>About</Link>
-            <Link to="/services" className={styles.navLink}>Services</Link>
-            <Link to="/#contact" className={styles.navLink}>Contact</Link>
+          <div className={styles.rightNav}>
+            <div className={styles.navLinks}>
+              <Link to={`/${lang}/#about1`} className={styles.navLink}>{t('nav.about')}</Link>
+              <Link to={`/${lang}/services`} className={styles.navLink}>{t('nav.services')}</Link>
+              <Link to={`/${lang}/#contact`} className={styles.navLink}>{t('nav.contact')}</Link>
+            </div>
+            <div className={styles.langSwitcher}>
+              <span className={getLangClass('fr')} onClick={() => handleLangChange('fr')}>FR</span>
+              <span className={styles.langSep}>/</span>
+              <span className={getLangClass('nl')} onClick={() => handleLangChange('nl')}>NL</span>
+              <span className={styles.langSep}>/</span>
+              <span className={getLangClass('en')} onClick={() => handleLangChange('en')}>EN</span>
+            </div>
           </div>
         </div>
       </nav>
@@ -59,16 +83,16 @@ export const ServicesHero = () => {
               variants={containerVariants}
             >
               <motion.span className={styles.label} variants={itemVariants}>
-                <span className={styles.accentSlash}>//</span> Expertise
+                <span className={styles.accentSlash}>//</span> {t("servicesPage.hero.label")}
               </motion.span>
               
               <motion.div className={styles.content} variants={itemVariants}>
                 <h1 className={styles.title}>
-                  Our Premium Services
+                  {t("servicesPage.hero.title")}
                 </h1>
                 
                 <p className={styles.desc}>
-                  From complete electrical wiring and smart home integration to solar panels and EV charging. We deliver top-tier solutions tailored to your needs.
+                  {t("servicesPage.hero.desc")}
                 </p>
               </motion.div>
             </motion.div>

@@ -1,23 +1,25 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import styles from './Reviews.module.css';
 
 const Reviews = () => {
+  const { t } = useTranslation();
   const reviewsList = [
     {
-      name: "Michael R.",
-      role: "Homeowner",
-      text: "Tempelor completely rewired our 1950s house. The team was incredibly professional, clean, and the final panel looks like a work of art. I sleep much better knowing our home is safe."
+      name: "Arthur De Smet",
+      role: t("reviews.r1.role"),
+      text: t("reviews.r1.text")
     },
     {
-      name: "Sarah Jenkins",
-      role: "Architect",
-      text: "As an architect, I appreciate contractors who understand both functionality and aesthetics. Tempelor's smart home integration was flawless. Highly recommended for luxury builds."
+      name: "Sophie Van den Berghe",
+      role: t("reviews.r2.role"),
+      text: t("reviews.r2.text")
     },
     {
-      name: "David T.",
-      role: "Business Owner",
-      text: "We hired them for a custom lighting and electrical setup in our new smart home. They finished exactly on schedule and passed all city inspections on the very first try."
+      name: "Laurent Dubois",
+      role: t("reviews.r3.role"),
+      text: t("reviews.r3.text")
     }
   ];
 
@@ -129,9 +131,9 @@ const Reviews = () => {
           variants={itemVariants}
         >
           <div className={styles.label}>
-            <span className={styles.accentSlash}>//</span> Testimonials
+            <span className={styles.accentSlash}>//</span> {t("reviews.label")}
           </div>
-          <h2 className={styles.title}>What Our Clients Say</h2>
+          <h2 className={styles.title}>{t("reviews.title")}</h2>
         </motion.div>
 
         {isDesktop ? (

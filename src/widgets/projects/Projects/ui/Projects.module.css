@@ -680,6 +680,71 @@
     padding: 28px 24px;
     gap: 24px;
   }
+
+  .bannerTitle {
+    font-size: 0.65rem;
+  }
+
+  .bannerIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bannerItemLabel {
+    font-size: 0.6rem;
+  }
+
+  .bannerArrow {
+    width: 28px;
+    height: 28px;
+  }
+
+  .bannerArrow svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .banner {
+    padding: 24px 20px;
+    gap: 12px;
+  }
+
+  .bannerMiddle {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .bannerLeft {
+    flex: 1;
+    width: auto;
+    align-items: center;
+  }
+
+  .bannerRight {
+    flex: 1.2;
+    width: auto;
+    margin: 0;
+  }
+
+  .bannerBtn {
+    width: 100%;
+    padding: 12px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 0.75rem;
+    justify-content: center;
+  }
+
+  .dropdownMenu {
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 220px;
+  }
 }
 
 @media (max-width: 400px) {
