@@ -17,7 +17,7 @@ const projectsData = [
     title: 'Project Boudewijn',
     desc: 'Complete electrical installation and smart home integration for the Boudewijn project. We ensured maximum safety and flawless aesthetic integration.',
     tags: ['Installation', 'Smart Home'],
-    photos: Array.from({ length: 12 }, (_, i) => `/project/Boudewijn/${i + 1}.jpg`),
+    photos: Array.from({ length: 12 }, (_, i) => `${import.meta.env.BASE_URL}project/Boudewijn/${i + 1}.jpg`),
   },
   {
     id: 'edegem',
@@ -27,7 +27,7 @@ const projectsData = [
     title: 'Project Edegem',
     desc: 'Modernization of electrical systems and custom lighting design.',
     tags: ['Modernization', 'Lighting'],
-    photos: Array.from({ length: 7 }, (_, i) => `/project/Edegem/${i + 1}.jpg`),
+    photos: Array.from({ length: 7 }, (_, i) => `${import.meta.env.BASE_URL}project/Edegem/${i + 1}.jpg`),
   },
   {
     id: 'heideland',
@@ -37,7 +37,7 @@ const projectsData = [
     title: 'Project Heideland',
     desc: 'Full residential rewiring and safety upgrades.',
     tags: ['Rewiring', 'Safety'],
-    photos: Array.from({ length: 5 }, (_, i) => `/project/Heideland/${i + 1}.jpg`),
+    photos: Array.from({ length: 5 }, (_, i) => `${import.meta.env.BASE_URL}project/Heideland/${i + 1}.jpg`),
   },
   {
     id: 'laureysstraat',
@@ -47,7 +47,7 @@ const projectsData = [
     title: 'Project Laureysstraat',
     desc: 'Advanced panel upgrades and exterior lighting.',
     tags: ['Panel Upgrade', 'Exterior'],
-    photos: Array.from({ length: 4 }, (_, i) => `/project/Laureysstraat/${i + 1}.jpg`),
+    photos: Array.from({ length: 4 }, (_, i) => `${import.meta.env.BASE_URL}project/Laureysstraat/${i + 1}.jpg`),
   },
   {
     id: 'leksklyuze',
@@ -57,7 +57,7 @@ const projectsData = [
     title: 'Project Leksklyuze',
     desc: 'Smart climate control and network infrastructure.',
     tags: ['Network', 'Automation'],
-    photos: Array.from({ length: 7 }, (_, i) => `/project/Leksklyuze/${i + 1}.jpg`),
+    photos: Array.from({ length: 7 }, (_, i) => `${import.meta.env.BASE_URL}project/Leksklyuze/${i + 1}.jpg`),
   },
   {
     id: 'oogststraat',
@@ -67,7 +67,7 @@ const projectsData = [
     title: 'Project Oogststraat',
     desc: 'Comprehensive energy management and solar integration.',
     tags: ['Solar', 'Energy'],
-    photos: Array.from({ length: 6 }, (_, i) => `/project/Oogststraat/${i + 1}.jpg`),
+    photos: Array.from({ length: 6 }, (_, i) => `${import.meta.env.BASE_URL}project/Oogststraat/${i + 1}.jpg`),
   },
   {
     id: 'potter',
@@ -77,7 +77,7 @@ const projectsData = [
     title: 'Project Potter',
     desc: 'Industrial style residential electrical setup and custom routing.',
     tags: ['Industrial', 'Routing'],
-    photos: Array.from({ length: 11 }, (_, i) => `/project/Potter/${i + 1}.jpg`),
+    photos: Array.from({ length: 11 }, (_, i) => `${import.meta.env.BASE_URL}project/Potter/${i + 1}.jpg`),
   },
   {
     id: 'spoorweglaan',
@@ -87,7 +87,7 @@ const projectsData = [
     title: 'Project Spoorweglaan',
     desc: 'Luxury estate electrical foundation and security systems.',
     tags: ['Security', 'Luxury Estate'],
-    photos: Array.from({ length: 5 }, (_, i) => `/project/Spoorweglaan/${i + 1}.jpg`),
+    photos: Array.from({ length: 5 }, (_, i) => `${import.meta.env.BASE_URL}project/Spoorweglaan/${i + 1}.jpg`),
   }
 ];
 

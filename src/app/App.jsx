@@ -7,11 +7,11 @@ import { ChatWidget } from '../widgets/marketing/ChatWidget/ui/ChatWidget';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/tempelor-website/">
       <BookingModalProvider>
         <div className="app">
           <Routes>
-            <Route path="/" element={<Navigate to="/fr" replace />} />
+            <Route path="/" element={<Navigate to="/en" replace />} />
             <Route path="/:lang" element={<LanguageProvider />}>
               <Route index element={<HomePage />} />
               {/* <Route path="services" element={<ServicesPage />} /> */}

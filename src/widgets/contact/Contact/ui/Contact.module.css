@@ -101,8 +101,8 @@
 /* FORM CARD */
 .formCard {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
   padding: 40px;
   border-radius: 24px;
   border: 1px solid rgba(0, 195, 255, 0.3);
@@ -198,8 +198,8 @@
 
 .bentoCard {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
